@@ -39,7 +39,7 @@ def chat(query):
         response = client.chat.completions.create(
             model="DeepSeek-V3.1",
             messages=chat_history,
-            max_tokens=200,
+            max_tokens=100,
             temperature=0.7
         )
 
