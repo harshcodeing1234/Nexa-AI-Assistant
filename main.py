@@ -26,7 +26,7 @@ client = OpenAI(
 chat_history = [
     {
         "role": "system",
-        "content": "You are Nexa, a professional AI assistant. Always reply in plain text. Do NOT use emojis. Do NOT use symbols. Keep responses clean, short and formal."
+        "content": "You are Nexa, a professional AI assistant. Always reply in plain text. Do NOT use emojis. Do NOT use symbols. Keep responses clean, short and formal.always response in english"
     }
 ]
 
@@ -76,7 +76,7 @@ def ai(prompt):
     if not os.path.exists("SambaNova"):
         os.mkdir("SambaNova")
 
-    filename = f"SambaNova/{prompt[:12]}.txt"
+    filename = f"SambaNova/{prompt[:20]}.txt"
     with open(filename, "w", encoding="utf-8") as f:
         f.write(text)
 
