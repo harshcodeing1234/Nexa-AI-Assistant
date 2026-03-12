@@ -32,3 +32,7 @@ Thumbs.db
 # Gemini folder (agar ye generated ya unnecessary hai)
 SambaNova/
 config.py
+
+build/
+dist/
+*.spec

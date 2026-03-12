@@ -224,26 +224,14 @@ def system_control(query):
             img = pyautogui.screenshot()
             img.save("screenshot.png")
             say("Screenshot saved")
-        
-        elif "unmute" in query.lower():
-            os.system("nircmd.exe mutesysvolume 0")
-            say("System unmuted") 
-
-        elif "mute" in query.lower():
-            os.system("nircmd.exe mutesysvolume 1")
-            say("System muted")
 
         elif "shutdown" in query.lower():
-            say("Are you sure?")
-            confirm = takeCommand()
-            if "yes" in confirm:
                 os.system("shutdown /s /t 5")
+                say('System shutdown')
 
         elif "restart" in query.lower():
-            say("Are you sure?")
-            confirm = takeCommand()
-            if "yes" in confirm:
                 os.system("shutdown /r /t 5")
+                say('system restared')
 
         ### Search app and website...
         elif "open" in query.lower():
