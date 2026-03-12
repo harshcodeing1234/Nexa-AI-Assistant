@@ -23,13 +23,12 @@ client = OpenAI(
     base_url="https://api.sambanova.ai/v1"
 )
 
-chat_history = [
+chat_history = [ 
     {
         "role": "system",
         "content": "You are Nexa, a professional AI assistant. Always reply in plain text. Do NOT use emojis. Do NOT use symbols. Keep responses clean, short and formal.always response in english"
     }
 ]
-
 def chat(query):
     global chat_history
     try:
@@ -217,8 +216,6 @@ def system_control(query):
         elif "cpu" in query.lower():
             say(f"CPU usage is {psutil.cpu_percent()} percent")
 
-        elif "ram" in query.lower():
-            say(f"RAM usage is {psutil.virtual_memory().percent} percent")
 
         elif "screenshot" in query.lower():
             img = pyautogui.screenshot()
@@ -302,6 +299,8 @@ def system_control(query):
         else:
             print("Chatting...")
             chat(query)
+        if "ram" in query.lower():
+            say(f"RAM usage is {psutil.virtual_memory().percent} percent")
 
 
 # Call function...
