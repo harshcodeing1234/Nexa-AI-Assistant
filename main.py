@@ -185,8 +185,10 @@ def tell_joke():
         joke_data = response.json()
         setup = joke_data['setup']
         punchline = joke_data['punchline']
+        print(setup)
         say(setup)
         time.sleep(2)
+        print(punchline)
         say(punchline)
     except:
         jokes = [
